@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trekking</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" type="text/css">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/pagesCounter.js" charset="utf-8"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+  </head>
+  <body>
+
+    <div id="container">
+      <header>
+          <!-- <span class="buttons" id="prev"></span> -->
+          <i class="fa fa-chevron-left fa-3x buttons" aria-hidden="true" id="prev"></i>
+
+          <div id="slides">
+            <ul class="list">
+              <li class="visible"><img src="images/1280-790-1.jpg" width="1024" height="632" alt="Slide 1"></li>
+              <li><img src="images/1280-790-2.jpg" width="1024" height="632" alt="Slide 2"></li>
+              <li><img src="images/1280-790-3.jpg" width="1024" height="632" alt="Slide 3"></li>
+              <li><img src="images/1280-790-4.jpg" width="1024" height="632" alt="Slide 4"></li>
+              <li><img src="images/1280-790-5.jpg" width="1024" height="632" alt="Slide 5"></li>
+            </ul>
+          </div>
+
+          <i class="fa fa-chevron-right fa-3x buttons" aria-hidden="true" id="next"></i>
+          <!-- <span class="buttons" id="next"></span> -->
+
+          <nav>
+            <ul class="list-inline">
+              <li><a href="#"><img class="logo" src="images/logo.png" alt="Logo"></a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                  <span id="item-count">0</span>
+                  <div id="shopping-card-window">
+                    <h5>Recently added items</h5>
+                    <ul>
+                    </ul>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+        <div class="description">
+          <h1>Our clothing , your comfort</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <i class="fa fa-chevron-down fa-2x" aria-hidden="true" id="to-bottom"></i>
+      </header>
+
+      <section>
+
+        <nav class="filter-products">
+          <div class="check">
+            <input type="checkbox" name="check" id="men-checkbox" checked/><label for="men-checkbox"><span class="checkbox">Men</span></label>
+          </div>
+          <div class="check">
+            <input type="checkbox" name="check" id="women-checkbox" checked/><label for="women-checkbox"><span class="checkbox">Women</span></label>
+          </div>
+          <div class="check">
+            <input type="checkbox" name="check" id="children-checkbox" checked/><label for="children-checkbox"><span class="checkbox">Children</span></label>
+          </div>
+          <button class="btn" type="button" name="button" id="selectAll">see all products</button>
+        </nav>
+
+        <article class="products" id="men-products">
+          <fieldset class="article-fieldset">
+            <legend>Men</legend>
+            <p class="pages"><span id="men-page"></span> / <span id="men-pages"></span></p>
+            <div class="arrows">
+              <i class="fa fa-chevron-left btn" id="men-prev" aria-hidden="true"></i>
+              <i class="fa fa-chevron-right btn" id="men-next" aria-hidden="true"></i>
+            </div>
+            <ul class="list-inline ul-element" id="men-elements">
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <div class="form-group">
+                    <input type="radio" name="color" value="#0000ff" id="men-radio11" class="regular-radio">
+                    <label for="men-radio11" class="color-label"></label>
+                    <input type="radio" name="color" value="#ffff00" id="men-radio12" class="regular-radio">
+                    <label for="men-radio12" class="color-label"></label>
+                    <input type="radio" name="color" value="#000000" id="men-radio13" class="regular-radio">
+                    <label for="men-radio13" class="color-label"></label>
+                  </div>
+                  <img src="images/T-shirt.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>T-shirt</p>
+                    <p>5.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <img src="images/pants.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Pants FORCLAZ</p>
+                    <p>30.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <p>10litri</p>
+                  <img src="images/backpack.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Backpack</p>
+                    <p>60.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+            </ul>
+            <script type="text/javascript">
+              pagesCount('men-elements', 'men-page', 'men-pages', 'men-prev', 'men-next');
+            </script>
+          </fieldset>
+        </article>
+
+        <article class="products" id="women-products">
+          <fieldset class="article-fieldset">
+            <legend>Women</legend>
+            <p class="pages"><span id="women-page"></span> / <span id="women-pages"></span></p>
+            <div class="arrows">
+              <i class="fa fa-chevron-left btn" id="women-prev" aria-hidden="true"></i>
+              <i class="fa fa-chevron-right btn" id="women-next" aria-hidden="true"></i>
+            </div>
+            <ul class="list-inline ul-element" id="women-elements">
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <img src="images/giacket.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Giacket</p>
+                    <p>60.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <img src="images/shoes.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Trekking shoes</p>
+                    <p>80.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <div class="form-group">
+                    <input type="radio" name="color" value="#0000ff" id="women-radio31" class="regular-radio">
+                    <label for="women-radio31" class="color-label"></label>
+                    <input type="radio" name="color" value="#ffff00" id="women-radio32" class="regular-radio">
+                    <label for="women-radio32" class="color-label"></label>
+                  </div>
+                  <img src="images/T-shirt-w.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>T-shirt</p>
+                    <p>20.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li>
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <img src="images/pants.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Pants FORCLAZ</p>
+                    <p>30.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li>
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <img src="images/giacket.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Giacket</p>
+                    <p>60.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li>
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <img src="images/shoes.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Trekking shoes</p>
+                    <p>80.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li>
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <div class="form-group">
+                    <input type="radio" name="color" value="#0000ff" id="women-radio41" class="regular-radio">
+                    <label for="women-radio31" class="color-label"></label>
+                    <input type="radio" name="color" value="#ffff00" id="women-radio42" class="regular-radio">
+                    <label for="women-radio32" class="color-label"></label>
+                  </div>
+                  <img src="images/T-shirt-w.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>T-shirt</p>
+                    <p>20.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li>
+                <form class="element-list" action="#" method="post">
+                  <p>10litri</p>
+                  <img src="images/backpack.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Backpack</p>
+                    <p>60.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+            </ul>
+            <script type="text/javascript">
+              pagesCount('women-elements', 'women-page', 'women-pages', 'women-prev', 'women-next');
+            </script>
+          </fieldset>
+        </article>
+
+        <article class="products" id="children-products">
+          <fieldset class="article-fieldset">
+            <legend>Children</legend>
+            <p class="pages"><span id="children-page"></span> / <span id="children-pages"></span></p>
+            <div class="arrows">
+              <i class="fa fa-chevron-left btn" id="children-prev" aria-hidden="true"></i>
+              <i class="fa fa-chevron-right btn" id="children-next" aria-hidden="true"></i>
+            </div>
+            <ul class="list-inline ul-element" id="children-elements">
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <div class="form-group">
+                    <input type="radio" name="color" value="#0000ff" id="children-radio11" class="regular-radio">
+                    <label for="children-radio11" class="color-label"></label>
+                    <input type="radio" name="color" value="#ffff00" id="children-radio12" class="regular-radio">
+                    <label for="children-radio12" class="color-label"></label>
+                    <input type="radio" name="color" value="#000000" id="children-radio13" class="regular-radio">
+                    <label for="children-radio13" class="color-label"></label>
+                  </div>
+                  <img src="images/T-shirt.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>T-shirt</p>
+                    <p>5.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <img src="images/giacket.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Giacket</p>
+                    <p>60.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li class="visible-products">
+                <form class="element-list" action="#" method="post">
+                  <select class="select-dropdown" name="size">
+                    <option selected disabled>Size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                  <img src="images/pants.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Pants FORCLAZ</p>
+                    <p>30.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li>
+                <form class="element-list" action="#" method="post">
+                  <p>10litri</p>
+                  <img src="images/backpack.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Backpack</p>
+                    <p>60.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+              <li>
+                <form class="element-list" action="#" method="post">
+                  <p>10litri</p>
+                  <img src="images/backpack.png" alt="T-shirt">
+                  <div class="row-p">
+                    <p>Backpack</p>
+                    <p>60.00 €</p>
+                  </div>
+                  <button type="button" name="button" value="Buy" class="btn buy-btn">Buy</button>
+                </form>
+              </li>
+            </ul>
+
+            <script type="text/javascript">
+              pagesCount('children-elements', 'children-page', 'children-pages', 'children-prev', 'children-next');
+            </script>
+
+          </fieldset>
+        </article>
+
+      </section>
+
+      <aside class="about-us">
+
+        <fieldset>
+          <legend>About Us</legend>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <br/>exercitation</p>
+        </fieldset>
+
+      </aside>
+
+      <footer>
+
+        <div class="twitter">
+          <p><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><span></span>“ E-commerce psd theme available ”</p>
+        </div>
+
+        <div class="credits">
+          <div class="credits-left">
+            <h3>Trekking</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="credits-right">
+            <ul class="list-inline">
+              <li><a href="#">Credits</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <p>Design by gianluca cosetta</p>
+          </div>
+        </div>
+
+      </footer>
+
+      <a href="#" id="to-top"><i class="fa fa-caret-up fa-4x" aria-hidden="true"></i></a>
+
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
