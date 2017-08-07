@@ -1,8 +1,4 @@
 $(document).ready(function(){
-  // hide all li elements from 3-th //
-  // $('ul.ul-element').each(function() {
-  //   $(this).children().slice(3).hide();
-  // });
 
   // scroll triangle in right corner
   $(document).scroll(function() {
@@ -117,7 +113,7 @@ $(document).ready(function(){
     var bayProduct = $(this).prev().text();
     $('#item-count').html(Number($('#item-count').text())+1).css('display', 'block');
     $('#shopping-card-window ul').append('<li>' + bayProduct + '</li>');
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   });
 
   //shopping-card icon hover
