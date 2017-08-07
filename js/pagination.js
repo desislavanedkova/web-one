@@ -1,3 +1,4 @@
+//add first page number
 function addPageNumber(ulType) {
   var pageId = '#' + ulType + '-page';
 
@@ -15,7 +16,7 @@ function pagination(ulType) {
   var ulElements = '#' + ulType + "-elements",
       liCount = $(ulElements).children().length;
 
-  addPageNumber(ulType);
+  //addPageNumber(ulType);
   addPagesCouner(ulType, liCount);
 
   //hide arrows if number of pages is 1
