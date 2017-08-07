@@ -33,7 +33,9 @@ $(document).ready(function(){
 
   //header image down triangle click
   $('#to-bottom').on('click', function() {
-    window.scroll(0, 600);
+    $('html, body').animate({
+        scrollTop: $(".filter-products").offset().top
+    }, 2000);
   });
 
   // click on checkbox
