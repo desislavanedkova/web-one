@@ -3,11 +3,8 @@ $(document).ready(function(){
   // scroll triangle in right corner
   $(document).scroll(function() {
     var y = $(this).scrollTop();
-    if (y > 550) {
-      $('#to-top').fadeIn();
-    } else {
-      $('#to-top').fadeOut();
-    }
+
+    y > 550 ? $('#to-top').fadeIn() : $('#to-top').fadeOut();
   });
 
   // header image scroll
@@ -44,7 +41,7 @@ $(document).ready(function(){
     var articleId = checkboxId.slice(0, checkboxId.indexOf('-'));
     var articleSelector = $('article[id^="'+ articleId +'"][id$="-products"]');
 
-    $(articleSelector).css('display') == 'none' ? $(articleSelector).css('display', '') : $(articleSelector).css('display', 'none');
+    $(articleSelector).css('display') == 'none' ? $(articleSelector).show() : $(articleSelector).hide();
 
   });
 
@@ -113,15 +110,23 @@ $(document).ready(function(){
   //product bay button click
   $('.buy-btn').on('click', function() {
     var bayProduct = $(this).prev().text();
-    $('#item-count').html(Number($('#item-count').text())+1).css('display', 'block');
+    $('#item-count').html(Number($('#item-count').text())+1).show();
     $('#shopping-card-window ul').append('<li>' + bayProduct + '</li>');
     // window.scrollTo(0, 0);
   });
 
-  //shopping-card icon hover
+  //hide a DIV when the user clicks outside of it
+  $(document).click(function(e){
+    // if the target of the click isn't the shopping-card-window nor a descendant of the shopping-card-window
+    if(!$("#shopping-card-window").is(e.target) && !$('.fa-shopping-cart').is(e.target) && $("#shopping-card-window").has(e.target).length == 0){
+      $("#shopping-card-window").hide();
+    }
+  });
+
+  //shopping-card icon click
   $('.fa-shopping-cart').on('click', function(){
     if (Number($('#item-count').text()) > 0) {
-      $('#shopping-card-window').css('display') == 'none' ? $('#shopping-card-window').css('display', 'block') : $('#shopping-card-window').css('display', 'none');
+      $('#shopping-card-window').css('display') == 'none' ? $('#shopping-card-window').show() : $('#shopping-card-window').hide();
     }
   });
 
