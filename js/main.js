@@ -110,6 +110,7 @@ $(document).ready(function(){
   //product bay button click
   $('.buy-btn').on('click', function() {
     var bayProduct = $(this).prev().text();
+    debugger;
     $('#item-count').html(Number($('#item-count').text())+1).show();
     $('#shopping-card-window ul').append('<li>' + bayProduct + '</li>');
     // window.scrollTo(0, 0);
