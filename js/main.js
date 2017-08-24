@@ -53,64 +53,69 @@ $(document).ready(function(){
 
 
   // products sroll
-  function productButtonClicked(article, direction) {
-    var selectorLi = '#' + article + ' .ul-element li',
-        liElements = $(selectorLi),
-        firstVisibleElement = undefined,
-        lastVisibleElement,
-        selectorButton = '#' + article.substr(0, article.indexOf('-')+1) + direction,
-        spanPage = '#' + article.substr(0, article.indexOf('-')+1) + 'page';
+  // function productButtonClicked(article, direction) {
+  //   var selectorLi = '#' + article + ' .ul-element li',
+  //       liElements = $(selectorLi),
+  //       firstVisibleElement = undefined,
+  //       lastVisibleElement,
+  //       selectorButton = '#' + article.substr(0, article.indexOf('-')+1) + direction,
+  //       spanPage = '#' + article.substr(0, article.indexOf('-')+1) + 'page';
+  //
+  //   for (var i = 0; i < liElements.length; i+=1) {
+  //     if (liElements[i].className == 'visible-products') {
+  //       if (firstVisibleElement == undefined) {
+  //         firstVisibleElement = i;
+  //       } else {
+  //         lastVisibleElement = i;
+  //       }
+  //     }
+  //   }
+  //
+  //   if (direction == 'next') {
+  //     if (firstVisibleElement + 3 < liElements.length - 1) {
+  //       for (let j = firstVisibleElement; j < lastVisibleElement + 1; j+=1) {
+  //         liElements[j].className = '';
+  //         if (liElements[j+3] != undefined) {
+  //           liElements[j+3].className = "visible-products";
+  //         }
+  //       }
+  //       $(spanPage).text(Math.round((lastVisibleElement+3)/3));
+  //     }
+  //   } else {
+  //     if (firstVisibleElement != '0') {
+  //       for (let j = lastVisibleElement; j > lastVisibleElement - 3; j-=1) {
+  //         if (liElements[j].className == 'visible-products') {
+  //           liElements[j].className = '';
+  //           if (liElements[j-3] != undefined) {
+  //             liElements[j-3].className = "visible-products";
+  //           }
+  //         } else {
+  //           liElements[j].className = 'visible-products';
+  //         }
+  //       }
+  //       $(spanPage).text(Math.round((firstVisibleElement)/3));
+  //     }
+  //   }
+  // }
+  //
+  // $('#men-next').on('click', function() { productButtonClicked('men-products', 'next'); });
+  // $('#men-prev').on('click', function() { productButtonClicked('men-products', 'prev'); });
+  //
+  // $('#women-next').on('click', function() { productButtonClicked('women-products', 'next'); });
+  // $('#women-prev').on('click', function() { productButtonClicked('women-products', 'prev'); });
+  //
+  // $('#children-next').on('click', function() { productButtonClicked('children-products', 'next'); });
+  // $('#children-prev').on('click', function() { productButtonClicked('children-products', 'prev'); });
 
-    for (var i = 0; i < liElements.length; i+=1) {
-      if (liElements[i].className == 'visible-products') {
-        if (firstVisibleElement == undefined) {
-          firstVisibleElement = i;
-        } else {
-          lastVisibleElement = i;
-        }
-      }
-    }
+  $('.left-btn').on("click", function() {
+    var $productArticle = $(this).parents('article'),
+        liVisible = $productArticle.children('li');
+  });
 
-    if (direction == 'next') {
-      if (firstVisibleElement + 3 < liElements.length - 1) {
-        for (let j = firstVisibleElement; j < lastVisibleElement + 1; j+=1) {
-          liElements[j].className = '';
-          if (liElements[j+3] != undefined) {
-            liElements[j+3].className = "visible-products";
-          }
-        }
-        $(spanPage).text(Math.round((lastVisibleElement+3)/3));
-      }
-    } else {
-      if (firstVisibleElement != '0') {
-        for (let j = lastVisibleElement; j > lastVisibleElement - 3; j-=1) {
-          if (liElements[j].className == 'visible-products') {
-            liElements[j].className = '';
-            if (liElements[j-3] != undefined) {
-              liElements[j-3].className = "visible-products";
-            }
-          } else {
-            liElements[j].className = 'visible-products';
-          }
-        }
-        $(spanPage).text(Math.round((firstVisibleElement)/3));
-      }
-    }
-  }
-
-  $('#men-next').on('click', function() { productButtonClicked('men-products', 'next'); });
-  $('#men-prev').on('click', function() { productButtonClicked('men-products', 'prev'); });
-
-  $('#women-next').on('click', function() { productButtonClicked('women-products', 'next'); });
-  $('#women-prev').on('click', function() { productButtonClicked('women-products', 'prev'); });
-
-  $('#children-next').on('click', function() { productButtonClicked('children-products', 'next'); });
-  $('#children-prev').on('click', function() { productButtonClicked('children-products', 'prev'); });
 
   //product bay button click
   $('.buy-btn').on('click', function() {
     var bayProduct = $(this).prev().text();
-    debugger;
     $('#item-count').html(Number($('#item-count').text())+1).show();
     $('#shopping-card-window ul').append('<li>' + bayProduct + '</li>');
     // window.scrollTo(0, 0);
