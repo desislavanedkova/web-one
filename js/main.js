@@ -107,9 +107,18 @@ $(document).ready(function(){
   // $('#children-next').on('click', function() { productButtonClicked('children-products', 'next'); });
   // $('#children-prev').on('click', function() { productButtonClicked('children-products', 'prev'); });
 
-  $('.left-btn').on("click", function() {
+  $('.right-btn').on("click", function() {
     var $productArticle = $(this).parents('article'),
-        liVisible = $productArticle.children('li');
+        arrLi = $productArticle.find('ul').children('li'),
+        firstVisibleLi = $productArticle.find('ul').children('li').first('.visible-products'),
+        count = $(arrLi).indexOf(firstVisibleLi);
+        debugger;
+        // for (var i = count; i < (count + 6); i+=1) {
+        //   $(arrLi[i]).toggleClass('visible-products');
+        // }
+
+        count += i;
+
   });
 
 
