@@ -111,7 +111,7 @@ $(document).ready(function(){
     var $productArticle = $(this).parents('article'),
         arrLi = $productArticle.find('ul').children('li'),
         firstVisibleLi = $productArticle.find('ul').children('li').first('.visible-products'),
-        count = $(arrLi).indexOf(firstVisibleLi);
+        count = $(arrLi).index(firstVisibleLi);
         debugger;
         // for (var i = count; i < (count + 6); i+=1) {
         //   $(arrLi[i]).toggleClass('visible-products');
