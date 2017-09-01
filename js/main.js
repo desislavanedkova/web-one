@@ -107,7 +107,6 @@ $(document).ready(function(){
   // $('#children-next').on('click', function() { productButtonClicked('children-products', 'next'); });
   // $('#children-prev').on('click', function() { productButtonClicked('children-products', 'prev'); });
 
-<<<<<<< HEAD
   function findFirstAndLastVisibleProduct(arrLi) {
     var firstVisibleElement = undefined,
         lastVisibleElement,
@@ -120,17 +119,6 @@ $(document).ready(function(){
         }
         return [firstVisibleElement, lastVisibleElement];
   }
-=======
-  $('.right-btn').on("click", function() {
-    var $productArticle = $(this).parents('article'),
-        arrLi = $productArticle.find('ul').children('li'),
-        firstVisibleLi = $productArticle.find('ul').children('li').first('.visible-products'),
-        count = $(arrLi).index(firstVisibleLi);
-        debugger;
-        // for (var i = count; i < (count + 6); i+=1) {
-        //   $(arrLi[i]).toggleClass('visible-products');
-        // }
->>>>>>> a493fe3ccce17898487807b604f1f8a9da3bf8db
 
   $('.right-btn').on("click", function() {
     var arrLi = $(this).parents('article').find('ul').children('li'),
@@ -178,8 +166,7 @@ $(document).ready(function(){
           }
         }
   });
-
-
+  
   //product bay button click
   $('.buy-btn').on('click', function() {
     var bayProduct = $(this).prev().text();
