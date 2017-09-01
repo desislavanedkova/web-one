@@ -107,18 +107,64 @@ $(document).ready(function(){
   // $('#children-next').on('click', function() { productButtonClicked('children-products', 'next'); });
   // $('#children-prev').on('click', function() { productButtonClicked('children-products', 'prev'); });
 
+  function findFirstAndLastVisibleProduct(arrLi) {
+    var firstVisibleElement = undefined,
+        lastVisibleElement,
+        arrLis = arrLi;
+
+        for (var i = 0; i < arrLis.length; i+= 1) {
+          if (arrLis[i].className == 'visible-products') {
+            firstVisibleElement == undefined ? firstVisibleElement = i : lastVisibleElement = i;
+          }
+        }
+        return [firstVisibleElement, lastVisibleElement];
+  }
+
   $('.right-btn').on("click", function() {
-    var $productArticle = $(this).parents('article'),
-        arrLi = $productArticle.find('ul').children('li'),
-        firstVisibleLi = $productArticle.find('ul').children('li').first('.visible-products'),
-        count = $(arrLi).indexOf(firstVisibleLi);
-        debugger;
-        // for (var i = count; i < (count + 6); i+=1) {
-        //   $(arrLi[i]).toggleClass('visible-products');
-        // }
+    var arrLi = $(this).parents('article').find('ul').children('li'),
+        data = findFirstAndLastVisibleProduct(arrLi),
+        firstVisibleElement = data[0],
+        lastVisibleElement = data[1];
 
-        count += i;
+        if (firstVisibleElement + 3 < arrLi.length - 1) {
+          for (var i = 0; i < lastVisibleElement + 1; i+= 1) {
+            arrLi[i].className = '';
+            if (arrLi[i+3] != undefined) {
+              arrLi[i+3].className = 'visible-products';
+            }
+          }
+        }
+  });
 
+  $('.left-btn').on("click", function() {
+    var arrLi = $(this).parents('article').find('ul').children('li'),
+        data = findFirstAndLastVisibleProduct(arrLi),
+        firstVisibleElement = data[0],
+        lastVisibleElement = data[1];
+
+        if (firstVisibleElement != 0 ) {
+          if (lastVisibleElement - firstVisibleElement > 1) {
+            for (var i = lastVisibleElement; i > lastVisibleElement - 3; i-= 1) {
+              if (arrLi[i].className == 'visible-products') {
+                arrLi[i].className = '';
+                if (arrLi[i - 3] != undefined) {
+                  arrLi[i-3].className = 'visible-products';
+                }
+              }
+            }
+          } else {
+            for (var i = lastVisibleElement; i > lastVisibleElement - 3; i-= 1) {
+              if (arrLi[i].className == 'visible-products') {
+                arrLi[i].className = '';
+                if (arrLi[i - 3] != undefined) {
+                  arrLi[i-3].className = 'visible-products';
+                }
+              } else {
+                arrLi[i].className = 'visible-products';
+              }
+            }
+          }
+        }
   });
 
 
