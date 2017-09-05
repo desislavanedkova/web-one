@@ -128,10 +128,17 @@ $(document).ready(function(){
 
   //product bay button click
   $('.buy-btn').on('click', function() {
-    var bayProduct = $(this).prev().text();
+    var bayProduct = $(this).siblings('.row-p').text();
     $('#item-count').html(Number($('#item-count').text())+1).show();
-    $('#shopping-card-window ul').append('<li>' + bayProduct + '</li>');
+    $('#shopping-card-window ul').append("<li><button class='del'>X</button>" + bayProduct + "</li>");
     // window.scrollTo(0, 0);
+  });
+
+  //delete item from shopping cord
+  $('#shopping-card-window').on('click', '.del' , function() {
+    $(this).parent('li').remove();
+    $('#item-count').html(Number($('#item-count').text())-1).show();
+    $("#shopping-card-window").show();
   });
 
   //hide a DIV when the user clicks outside of it
@@ -141,6 +148,7 @@ $(document).ready(function(){
       $("#shopping-card-window").hide();
     }
   });
+
 
   //shopping-card icon click
   $('.fa-shopping-cart').on('click', function(){

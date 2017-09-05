@@ -126,7 +126,7 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline > li {
 }
 
 #container header nav .list-inline > li a #shopping-card-window ul li {
-  list-style-position: inside;
+  list-style: none;
 }
 
 #container header nav .list-inline > li a:hover {
