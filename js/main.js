@@ -51,62 +51,7 @@ $(document).ready(function(){
     $('article.products').css('display', '');
   });
 
-
-  // products sroll
-  // function productButtonClicked(article, direction) {
-  //   var selectorLi = '#' + article + ' .ul-element li',
-  //       liElements = $(selectorLi),
-  //       firstVisibleElement = undefined,
-  //       lastVisibleElement,
-  //       selectorButton = '#' + article.substr(0, article.indexOf('-')+1) + direction,
-  //       spanPage = '#' + article.substr(0, article.indexOf('-')+1) + 'page';
-  //
-  //   for (var i = 0; i < liElements.length; i+=1) {
-  //     if (liElements[i].className == 'visible-products') {
-  //       if (firstVisibleElement == undefined) {
-  //         firstVisibleElement = i;
-  //       } else {
-  //         lastVisibleElement = i;
-  //       }
-  //     }
-  //   }
-  //
-  //   if (direction == 'next') {
-  //     if (firstVisibleElement + 3 < liElements.length - 1) {
-  //       for (let j = firstVisibleElement; j < lastVisibleElement + 1; j+=1) {
-  //         liElements[j].className = '';
-  //         if (liElements[j+3] != undefined) {
-  //           liElements[j+3].className = "visible-products";
-  //         }
-  //       }
-  //       $(spanPage).text(Math.round((lastVisibleElement+3)/3));
-  //     }
-  //   } else {
-  //     if (firstVisibleElement != '0') {
-  //       for (let j = lastVisibleElement; j > lastVisibleElement - 3; j-=1) {
-  //         if (liElements[j].className == 'visible-products') {
-  //           liElements[j].className = '';
-  //           if (liElements[j-3] != undefined) {
-  //             liElements[j-3].className = "visible-products";
-  //           }
-  //         } else {
-  //           liElements[j].className = 'visible-products';
-  //         }
-  //       }
-  //       $(spanPage).text(Math.round((firstVisibleElement)/3));
-  //     }
-  //   }
-  // }
-  //
-  // $('#men-next').on('click', function() { productButtonClicked('men-products', 'next'); });
-  // $('#men-prev').on('click', function() { productButtonClicked('men-products', 'prev'); });
-  //
-  // $('#women-next').on('click', function() { productButtonClicked('women-products', 'next'); });
-  // $('#women-prev').on('click', function() { productButtonClicked('women-products', 'prev'); });
-  //
-  // $('#children-next').on('click', function() { productButtonClicked('children-products', 'next'); });
-  // $('#children-prev').on('click', function() { productButtonClicked('children-products', 'prev'); });
-
+  //finding index of first and last visible element
   function findFirstAndLastVisibleProduct(arrLi) {
     var firstVisibleElement = undefined,
         lastVisibleElement,
@@ -120,12 +65,14 @@ $(document).ready(function(){
         return [firstVisibleElement, lastVisibleElement];
   }
 
+  //write the visible page number
   function addPageFromPages(pageID, elements) {
     var $pageID = pageID;
 
     $pageID.text(Math.round((elements)/3));
   }
 
+  //right button click
   $('.right-btn').on("click", function() {
     var arrLi = $(this).parents('article').find('ul').children('li'),
         spanPage = $(this).parents('article').find("span[id$='page']"),
@@ -145,6 +92,7 @@ $(document).ready(function(){
         addPageFromPages(spanPage, (lastVisibleElement + 3));
   });
 
+  //left button click
   $('.left-btn').on("click", function() {
     var arrLi = $(this).parents('article').find('ul').children('li'),
         spanPage = $(this).parents('article').find("span[id$='page']"),
@@ -177,7 +125,7 @@ $(document).ready(function(){
           addPageFromPages(spanPage, firstVisibleElement);
         }
   });
-  
+
   //product bay button click
   $('.buy-btn').on('click', function() {
     var bayProduct = $(this).prev().text();
