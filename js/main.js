@@ -138,7 +138,6 @@ $(document).ready(function(){
   $('#shopping-card-window').on('click', '.del' , function() {
     $(this).parent('li').remove();
     $('#item-count').html(Number($('#item-count').text())-1).show();
-    $("#shopping-card-window").show();
   });
 
   //hide a DIV when the user clicks outside of it
