@@ -14,6 +14,5 @@ function pagination(ulType) {
   //hide arrows if number of pages is 1
   if (liCount/3 == 1) {
     $ulElements.siblings('.arrows').children('*').css('visibility', 'hidden');
-
   }
 }

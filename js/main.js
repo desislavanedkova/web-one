@@ -120,8 +120,15 @@ $(document).ready(function(){
         return [firstVisibleElement, lastVisibleElement];
   }
 
+  function addPageFromPages(pageID, elements) {
+    var $pageID = pageID;
+
+    $pageID.text(Math.round((elements)/3));
+  }
+
   $('.right-btn').on("click", function() {
     var arrLi = $(this).parents('article').find('ul').children('li'),
+        spanPage = $(this).parents('article').find("span[id$='page']"),
         data = findFirstAndLastVisibleProduct(arrLi),
         firstVisibleElement = data[0],
         lastVisibleElement = data[1];
@@ -134,10 +141,13 @@ $(document).ready(function(){
             }
           }
         }
+
+        addPageFromPages(spanPage, (lastVisibleElement + 3));
   });
 
   $('.left-btn').on("click", function() {
     var arrLi = $(this).parents('article').find('ul').children('li'),
+        spanPage = $(this).parents('article').find("span[id$='page']"),
         data = findFirstAndLastVisibleProduct(arrLi),
         firstVisibleElement = data[0],
         lastVisibleElement = data[1];
@@ -164,6 +174,7 @@ $(document).ready(function(){
               }
             }
           }
+          addPageFromPages(spanPage, firstVisibleElement);
         }
   });
   
