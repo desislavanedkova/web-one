@@ -7,6 +7,10 @@ $(document).ready(function(){
     y > 550 ? $('#to-top').fadeIn() : $('#to-top').fadeOut();
   });
 
+
+
+  
+
   // header image scroll
   function buttonClicked(direction){
 
