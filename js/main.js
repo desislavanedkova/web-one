@@ -126,24 +126,44 @@ $(document).ready(function(){
         }
   });
 
+  function isProductAlreadyIn(bayProductID) {
+    var $productsIn = $('#shopping-card-window ul').children('li'),
+        count = 1;
+    debugger;
+        for (var i = 0; i < $productsIn.length; i+=1) {
+          $productsIn[i].className == bayProductID ? count += 1 : count = 1;
+            // count = Number($productsIn[i].childNodes('span').text()) + 1;
+        }
+        return count;
+  }
+
   //product bay button click
   $('.buy-btn').on('click', function() {
-    var bayProduct = $(this).siblings('.row-p').text();
+    var bayProductInfo = $(this).siblings('.row-p').text(),
+        bayProductID = $(this).parents('li').attr('ID');
+
+    count = isProductAlreadyIn(bayProductID);
+
+    if (count == 1) {
+      $('#shopping-card-window ul').append("<li class=" + bayProductID + "><button class='del btn' onclick='return false;'>X</button>" + bayProductInfo + "<span>" + count + "</span> piece</li>");
+    } else {
+      // $('#shopping-card-window ul').find('id:') attr('class', bayProductID).children('span').text(count);
+    }
+
     $('#item-count').html(Number($('#item-count').text())+1).show();
-    $('#shopping-card-window ul').append("<li><button class='del'>X</button>" + bayProduct + "</li>");
     // window.scrollTo(0, 0);
   });
 
   //delete item from shopping cord
   $('#shopping-card-window').on('click', '.del' , function() {
     $(this).parent('li').remove();
-    $('#item-count').html(Number($('#item-count').text())-1).show();
+      $('#item-count').text() == 1 ? $('#item-count').html('').hide() :  $('#item-count').html(Number($('#item-count').text())-1).show();
   });
 
   //hide a DIV when the user clicks outside of it
   $(document).click(function(e){
     // if the target of the click isn't the shopping-card-window nor a descendant of the shopping-card-window
-    if(!$("#shopping-card-window").is(e.target) && !$('.fa-shopping-cart').is(e.target) && $("#shopping-card-window").has(e.target).length == 0){
+    if(!$("#shopping-card-window").is(e.target) && !$('.fa-shopping-cart').is(e.target) && !$('.del').is(e.target) && $("#shopping-card-window").has(e.target).length == 0){
       $("#shopping-card-window").hide();
     }
   });
