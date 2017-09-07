@@ -28,8 +28,8 @@ $(document).ready(function(){
   $('#next').on('click', function() { buttonClicked('next'); });
   $('#prev').on('click', function() { buttonClicked('prev'); });
 
-  //header image down triangle click
-  $('#to-bottom').on('click', function() {
+  //header image down triangle and products button click
+  $('.to-products').on('click', function() {
     $('html, body').animate({
         scrollTop: $(".filter-products").offset().top
     }, 2000);
