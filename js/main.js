@@ -126,28 +126,33 @@ $(document).ready(function(){
         }
   });
 
+  //numer ot the same items already in basket
   function isProductAlreadyIn(bayProductID) {
-    var $productsIn = $('#shopping-card-window ul').children('li'),
+    var productsIn = $('#shopping-card-window ul').children('li'),
         count = 1;
-    debugger;
-        for (var i = 0; i < $productsIn.length; i+=1) {
-          $productsIn[i].className == bayProductID ? count += 1 : count = 1;
-            // count = Number($productsIn[i].childNodes('span').text()) + 1;
+        for (var i = 0; i < productsIn.length; i+=1) {
+          if ($(productsIn[i]).hasClass(bayProductID)) {
+            count = Number($(productsIn[i]).children('span').text()) + 1;
+            return count;
+          }
         }
         return count;
   }
 
   //product bay button click
   $('.buy-btn').on('click', function() {
-    var bayProductInfo = $(this).siblings('.row-p').text(),
-        bayProductID = $(this).parents('li').attr('ID');
+    var $this = $(this),
+        bayProductInfo = $this.siblings('.row-p').text(),
+        bayProdictCategory = $this.parents('fieldset').children('legend').text(),
+        bayProductID = $this.parents('li').attr('ID'),
+        liCount = $('#shopping-card-window ul').children('li').lenght;
 
     count = isProductAlreadyIn(bayProductID);
 
-    if (count == 1) {
-      $('#shopping-card-window ul').append("<li class=" + bayProductID + "><button class='del btn' onclick='return false;'>X</button>" + bayProductInfo + "<span>" + count + "</span> piece</li>");
+    if ($('#shopping-card-window ul').find('li.' + bayProductID).html() == undefined) {
+      $('#shopping-card-window ul').append("<li class=" + bayProductID + "><button class='del btn' onclick='return false;'>X</button>" + bayProdictCategory + " - " + bayProductInfo + "<span>" + count + "</span> piece</li>");
     } else {
-      // $('#shopping-card-window ul').find('id:') attr('class', bayProductID).children('span').text(count);
+      $('#shopping-card-window ul').find('li.' + bayProductID).children('span').text(count);
     }
 
     $('#item-count').html(Number($('#item-count').text())+1).show();
@@ -156,8 +161,13 @@ $(document).ready(function(){
 
   //delete item from shopping cord
   $('#shopping-card-window').on('click', '.del' , function() {
-    $(this).parent('li').remove();
-      $('#item-count').text() == 1 ? $('#item-count').html('').hide() :  $('#item-count').html(Number($('#item-count').text())-1).show();
+    var countDeletedProducts = Number($(this).siblings('span').text()),
+        newItemCount;
+
+      $(this).parent('li').remove();
+      newItemCount = Number($('#item-count').text())-countDeletedProducts;
+
+      newItemCount == 0 ? $('#item-count').html('').hide() : $('#item-count').html(newItemCount).show(); //hide icon when is 0 items
   });
 
   //hide a DIV when the user clicks outside of it
