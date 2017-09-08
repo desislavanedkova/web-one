@@ -150,7 +150,7 @@ $(document).ready(function(){
     count = isProductAlreadyIn(bayProductID);
 
     if ($('#shopping-card-window ul').find('li.' + bayProductID).html() == undefined) {
-      $('#shopping-card-window ul').append("<li class=" + bayProductID + "><button class='del btn' onclick='return false;'>X</button>" + bayProdictCategory + " - " + bayProductInfo + "<span>" + count + "</span> piece</li>");
+      $('#shopping-card-window ul').append("<li class=" + bayProductID + "><button class='del btn btn-danger btn-xs' onclick='return false;'>X</button>" + bayProdictCategory + " - " + bayProductInfo + "<span>" + count + "</span> piece</li>");
     } else {
       $('#shopping-card-window ul').find('li.' + bayProductID).children('span').text(count);
     }
