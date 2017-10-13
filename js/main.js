@@ -7,6 +7,13 @@ $(document).ready(function(){
     y > 550 ? $('#to-top').fadeIn() : $('#to-top').fadeOut();
   });
 
+  //header image down triangle and products button click
+  $('#to-top').on('click', function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 2000);
+  });
+
   // header image scroll
   function buttonClicked(direction){
 

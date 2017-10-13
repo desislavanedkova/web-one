@@ -30,6 +30,7 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 			top: 47%;
 
 			opacity: $opacity-level;
+			cursor: pointer;
 
 			&:hover {
 				opacity: $opacity-level-hover;
@@ -180,6 +181,7 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 			left: 48.63%;
 
 			opacity: $opacity-level;
+			cursor: pointer;
 
 			&:hover {
 				opacity: $opacity-level-hover;
@@ -621,6 +623,7 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 		bottom: 25px;
 
 		display: none;
+		cursor: pointer;
 
 		text-decoration: none;
 
