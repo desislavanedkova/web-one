@@ -156,6 +156,7 @@ $(document).ready(function(){
     }
 
     $('#item-count').html(Number($('#item-count').text())+1).show();
+    alert('The product was add to the basket'); //info window
     // window.scrollTo(0, 0);
   });
 
