@@ -12,6 +12,12 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline > li {
   font-family: 'Quicksand', sans-serif;
 }
 
+@media screen and (max-width: 640px) {
+  #container {
+    width: 640px;
+  }
+}
+
 #container header {
   position: relative;
   width: auto;

@@ -1,6 +1,8 @@
 $opacity-level: 0.4;
 $opacity-level-hover: 0.9;
 $hover-color: #aa9b77;
+$break-small: 640px;
+$break-large: 1200px;
 
 body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 	margin: 0;
@@ -16,6 +18,10 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 	margin: 0 auto;
 
 	font-family: 'Quicksand', sans-serif;
+
+	@media screen and (max-width: $break-small) {
+		width: 640px;
+	}
 
 	header {
 		position: relative;
