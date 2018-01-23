@@ -1,8 +1,9 @@
 $opacity-level: 0.4;
 $opacity-level-hover: 0.9;
 $hover-color: #aa9b77;
-$break-small: 640px;
-$break-large: 1200px;
+$bg-color: #f5f6f7;
+// $break-small: 640px;
+// $break-large: 1200px;
 
 body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 	margin: 0;
@@ -19,9 +20,9 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 
 	font-family: 'Quicksand', sans-serif;
 
-	@media screen and (max-width: $break-small) {
-		width: 640px;
-	}
+	// @media screen and (max-width: $break-small) {
+	// 	width: 320px;
+	// }
 
 	header {
 		position: relative;
@@ -140,7 +141,7 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 							padding: 5px;
 							width: 200px;
 							height: 150px;
-							background-color: #ffffff;
+							background-color: $bg-color;
 							color: #000000;
 							border-radius: 5px;
 							overflow-y: auto;
@@ -203,7 +204,7 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 			height: 116px;
 			padding: 0 7.5%;
 
-			background-color: #f5f6f7;
+			background-color: $bg-color;
 
 			.check {
 				position: relative;
@@ -297,6 +298,10 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 
 				font-size: 0.8em;
 
+				&:hover {
+					font-weight: bold;
+				}
+
 				&:active {
 					transform: translateY(1px);
 				}
@@ -348,8 +353,8 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline>li {
 						width: 30%;
 						margin: 0 2%;
 
-						border: 3px solid #f5f6f7;
-						background-color: #f5f6f7;
+						border: 3px solid $bg-color;
+						background-color: $bg-color;
 
 						&.visible-products {
 							display: inline-block;

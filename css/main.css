@@ -12,12 +12,6 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline > li {
   font-family: 'Quicksand', sans-serif;
 }
 
-@media screen and (max-width: 640px) {
-  #container {
-    width: 640px;
-  }
-}
-
 #container header {
   position: relative;
   width: auto;
@@ -126,7 +120,7 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline > li {
   padding: 5px;
   width: 200px;
   height: 150px;
-  background-color: #ffffff;
+  background-color: #f5f6f7;
   color: #000000;
   border-radius: 5px;
   overflow-y: auto;
@@ -257,6 +251,10 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline > li {
   border: none;
   background-color: #aa9b77;
   font-size: 0.8em;
+}
+
+#container section .filter-products #selectAll:hover {
+  font-weight: bold;
 }
 
 #container section .filter-products #selectAll:active {
