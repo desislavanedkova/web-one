@@ -164,6 +164,7 @@ $(document).ready(function(){
       $('#shopping-card-window ul').find('li.' + bayProductID).children('.count').text(count);
       //add more numbers from alredy in the basket product
       $('#shopping-card-window ul').find('li.' + bayProductID).children('.unit').text('pieces');
+      //
     }
 
     $('#item-count').html(Number($('#item-count').text())+1).show();
