@@ -139,7 +139,8 @@ $(document).ready(function(){
         count = 1;
         for (var i = 0; i < productsIn.length; i+=1) {
           if ($(productsIn[i]).hasClass(bayProductID)) {
-            count = Number($(productsIn[i]).children('span').text()) + 1;
+            count = Number($(productsIn[i]).children('.count').text()) + 1;
+            //take the number from the span tag and increased with 1
             return count;
           }
         }
@@ -157,9 +158,12 @@ $(document).ready(function(){
     count = isProductAlreadyIn(bayProductID);
 
     if ($('#shopping-card-window ul').find('li.' + bayProductID).html() == undefined) {
-      $('#shopping-card-window ul').append("<li class=" + bayProductID + "><button class='del btn btn-danger btn-xs' onclick='return false;'>X</button>" + bayProdictCategory + " - " + bayProductInfo + "<span>" + count + "</span> piece</li>");
+      $('#shopping-card-window ul').append(`<li class=  ${bayProductID} ><button class='del btn btn-danger btn-xs' onclick='return false;'>X</button> ${bayProdictCategory} - ${bayProductInfo} - <span class="count"> ${count} </span> <span class="unit">piece</span></li>`);
+      //first initialisation of the product row in the basket
     } else {
-      $('#shopping-card-window ul').find('li.' + bayProductID).children('span').text(count);
+      $('#shopping-card-window ul').find('li.' + bayProductID).children('.count').text(count);
+      //add more numbers from alredy in the basket product
+      $('#shopping-card-window ul').find('li.' + bayProductID).children('.unit').text('pieces');
     }
 
     $('#item-count').html(Number($('#item-count').text())+1).show();
@@ -169,7 +173,7 @@ $(document).ready(function(){
 
   //delete item from shopping cord
   $('#shopping-card-window').on('click', '.del' , function() {
-    var countDeletedProducts = Number($(this).siblings('span').text()),
+    var countDeletedProducts = Number($(this).siblings('.count').text()),
         newItemCount;
 
       $(this).parent('li').remove();
