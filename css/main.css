@@ -7,7 +7,6 @@ body, ul, li, .list-inline, p, input[type="radio"], .list-inline > li {
   position: relative;
   top: 0;
   box-sizing: border-box;
-  width: 1024px;
   margin: 0 auto;
   font-family: 'Quicksand', sans-serif;
 }
